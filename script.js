@@ -66,10 +66,12 @@ function timerFlash () {
 
     let flashInterval = setInterval(function() {
         if (flashCount < 6) {
-            if (flashCount % 2 == 1) {
-                document.querySelector(".timer-container").backgroundColor = "white";
+            if (flashCount % 2 == 0) {
+                document.querySelector(".timer-container").style.backgroundColor = "white";
+                flashCount++;
             } else {
-                document.querySelector(".timer-container").backgroundColor = "lightblue";
+                document.querySelector(".timer-container").style.backgroundColor = "lightblue";
+                flashCount++;
             }
         } else {
             clearInterval(flashInterval);
@@ -92,6 +94,10 @@ function changeSettingsDisplay(settingDisplay, value) {
 }
 
 function countDown(countDownTime) {
+
+    document.querySelector(".task").innerHTML = currentPeriod;
+    document.querySelector("#next-up").innerHTML = nextPeriod;
+
     let minutes = 0;
     let seconds = 0;
 
@@ -106,7 +112,7 @@ function countDown(countDownTime) {
             document.querySelector("#time-remaining").innerHTML = minutes + ":" + seconds;
         }
 
-        if (totalSeconds == 0) {
+        if (countDownTime == 0) {
             clearInterval(countDownInterval);
             timerFlash();
         }
@@ -115,16 +121,32 @@ function countDown(countDownTime) {
 
 function repTracker() {
 
-    //call count down for current time period and rep
     totalSeconds = times[positionInTimes] * 60;
-    countDown(totalSeconds);
     
-    //advance rep number, loop back to 0 if at end
+    //prep the correct names for the time period ready for count down to display them
+    if (positionInTimes % 2 == 0 && positionInTimes < (times.length - 2)) {
+            currentPeriod = "Work";
+            nextPeriod = "Short Break";
+    } else if (positionInTimes % 2 == 0 && positionInTimes == (times.length - 2)) {
+        currentPeriod = "Work";
+        nextPeriod = "Long Break";
+    } else if (positionInTimes % 2 == 1 && positionInTimes < (times.length - 1)) {
+        currentPeriod = "Short Break";
+        nextPeriod = "Work";
+    } else if (positionInTimes % 2 == 1 && positionInTimes == (times.length - 1)) {
+        currentPeriod = "Long Break";
+        nextPeriod = "Work";
+    }
+
+    //advance rep number, loop back to 0 if at end ready for next iteration
     if (positionInTimes == (times.length - 1)) {
         positionInTimes = 0;
     } else {
-        positionInTimes++;
+        positionInTimes++; 
     }
+
+    //call count down for current time period    
+    countDown(totalSeconds);
 }
 
 // BUTTON ACTIONS //////////////////////////////////////////////////////////////
