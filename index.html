@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;500&display=swap" rel="stylesheet">
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <h1>custom pomodoro</h1>
+
+    <div class="settings-container">
+        <div class="settings-item"><h2>Work Time</h2><input type="range" min="5" max="30" step="1" value="20" id="wtime" oninput="workTimeUpdate()"><h3 id="wt">20:00</h3></div>
+        <div class="settings-item"><h2>Short Break</h2><input type="range" min="5" max="30" step="1" value="5" id="sbreak" oninput="shortBreakUpdate()"><h3 id="sb">5:00</h3></div>
+        <div class="settings-item"><h2>Repetitions</h2><input type="range" min="2" max="5" step="1" value="4" id="reps" oninput="repsUpdate()"><h3 id="rp">4 Work Periods</h3></div>
+        <div class="settings-item"><h2>Long Break</h2><input type="range" min="15" max="60" step="1" value="20" id="lbreak" oninput="longBreakUpdate()"><h3 id="lb">20:00</h3></div>
+    </div>
+
+    <div class="timer-container">
+        <p class="timer-item task">Work</p>
+        <p class="timer-item" id="time-remaining">20:00</p>
+    </div>
+    <div class="button-container">
+        <button id="play-pause" onclick="startPause()">START</button>
+        <!-- <button id="reset" onclick="reset()">RESET</button> -->
+    </div>
+    <div>
+        <p class="next">Next Period: <span id="next-up">Short Break</span></p>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,172 @@
+/* MAIN THEMES ************************************************************** */
+
+h1, h2, h3 {
+    color: white;
+    font-family: Prompt;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+h2, h3 {
+    font-weight: 300;
+}
+
+h1 {
+    background-color: midnightblue;
+    padding-left: 1rem;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.settings-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: midnightblue;
+    border-radius: 0 0 20px 20px ;
+}
+
+.settings-item {
+    display: flex;
+
+}
+
+.timer-container {
+    display: flex;
+    border: 3px solid midnightblue;
+    border-radius: 20px;
+    background-color: lightblue;
+}
+
+.timer-item {
+    font-size: 8rem;
+    text-align: center;
+    margin: 0;
+    font-family: Prompt;
+    font-weight: 100;
+    color: midnightblue;
+}
+
+.task {
+    font-size: 4rem;
+    margin-top: 5%;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+button {
+    border: none;
+    width: 40%;
+    height: 3rem;
+    font-family: Prompt;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: white;
+    background-color: midnightblue;
+    border-radius: 20px;
+}
+
+button:active {
+    background-color: lightblue;
+}
+
+.next {
+    text-align: center;
+    font-family: Prompt;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: midnightblue;
+}
+
+
+/* PHONE AND TABLET VIEW **************************************************** */
+
+@media (max-width: 900px) {
+    h1 {
+        border-radius: 20px;
+    }
+
+    h2, h3 {
+        padding: 0;
+        margin: 0;
+        width: 25%;
+    }
+
+    h2, h3 {
+        text-align: left;
+        margin-left: 2%;
+    }
+
+    .settings-container {
+        position: absolute;
+        bottom: 1.5%;
+        width: 97%;
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .settings-item {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .timer-container {
+        flex-direction: column;
+        margin-top: 10%;
+    }
+
+    .timer-item {
+        width: 100%;
+    }
+
+    input[type=range] {
+        width: 50%;
+    }
+}
+
+/* SMALL PHONE VIEW ********************************************************* */
+
+@media (max-width: 595px) {
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3{
+        font-size: 0.75rem;
+    }
+
+    .timer-container {
+        margin-bottom: 15%;
+    }
+
+    .timer-item {
+        width: 100%;
+    }
+}
+
+/* LAPTOP AND DESKTOP VIEW ************************************************** */
+
+@media (min-width: 901px) {
+    .timer-container {
+        margin: 13% 0 11% 0;
+        justify-content: space-around;
+    }
+
+    .settings-item {
+        flex-direction: column;
+        width: 23%;
+    }
+
+    .timer-item {
+        width: 50%;
+    }
+}
+
