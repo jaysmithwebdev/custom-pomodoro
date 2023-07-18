@@ -86,7 +86,7 @@ button:active {
 }
 
 
-/* PHONE AND TABLET VIEW **************************************************** */
+/* LARGE PHONE AND TABLET VIEW **************************************************** */
 
 @media (max-width: 900px) {
     h1 {
@@ -132,7 +132,7 @@ button:active {
     }
 }
 
-/* SMALL PHONE VIEW ********************************************************* */
+/* SMALL PHONE VIEWS ******************************************************** */
 
 @media (max-width: 595px) {
     h2 {
@@ -149,6 +149,24 @@ button:active {
 
     .timer-item {
         width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    h2 {
+        font-size: 0.7rem;
+    }
+
+    h3 {
+        font-size: 0.6rem;
+    }
+
+    .timer-item {
+        font-size: 5rem;
+    }
+
+    .task {
+        font-size: 3rem;
     }
 }
 
